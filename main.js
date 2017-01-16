@@ -47,8 +47,8 @@ function addInformation(text, from, array) {
     })
 }
 
-getUrl("henry Ford").then(result => {
-  return getQuotes(result)
-}).then(result => {
-  console.log(result)
-})
+
+module.exports = {
+  getUrl: getUrl,
+  getQuotes: getQuotes
+}
