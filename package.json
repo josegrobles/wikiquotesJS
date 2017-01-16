@@ -1,0 +1,24 @@
+{
+  "name": "wikiquotesjs",
+  "version": "0.3.0",
+  "description": "A fun way to obtain quotes from your favourite people",
+  "main": "main.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josegrobles/wikiquotesJS.git"
+  },
+  "keywords": [
+    "quotes",
+    "api",
+    "wikiquotes"
+  ],
+  "author": "Jose Antonio <josegrobles1997@gmail.com> (https://josegrobles.me)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/josegrobles/wikiquotesJS/issues"
+  },
+  "homepage": "https://github.com/josegrobles/wikiquotesJS#readme"
+}
