@@ -4,7 +4,7 @@
   "description": "A fun way to obtain quotes from your favourite people",
   "main": "main.js",
   "scripts": {
-    "test": "test.js"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,12 @@
   "bugs": {
     "url": "https://github.com/josegrobles/wikiquotesJS/issues"
   },
-  "homepage": "https://github.com/josegrobles/wikiquotesJS#readme"
+  "homepage": "https://github.com/josegrobles/wikiquotesJS#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "cheerio": "^0.22.0",
+    "mocha": "^3.2.0",
+    "request": "^2.79.0"
+  }
 }
