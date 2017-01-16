@@ -14,12 +14,11 @@ var getQuotes = url => {
                 if ($(this).get(0).tagName == 'h2') count++
                     if (count < 2) {
                         let str = $(this).children('li').text()
-                        let where = str.search($(this).children('li').children('ul').children().last().text().substr(0, 10))
-                        let text = str.substr(0, where)
+                        let text = str.substr(0, str.search($(this).children('li').children('ul').children().last().text().substr(0, 10)))
                         addInformation(text, $(this).children('li').children('ul').children().last().children('i').text(), final)
                     }
             } catch (ex) {
-
+                console.log(ex)
             }
             fulfill(final)
         });
