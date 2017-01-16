@@ -1,6 +1,6 @@
 {
   "name": "wikiquotesjs",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "A fun way to obtain quotes from your favourite people",
   "main": "main.js",
   "scripts": {
