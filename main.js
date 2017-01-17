@@ -2,7 +2,7 @@
 let request = require('request')
 let cheerio = require('cheerio')
 
-var getQuotes = url => {
+var getQuotes = (url,max_length) => {
   return new Promise((fulfill,reject) => {
     request("https://en.wikiquote.org" + url, function(error, response, html) {
         if (error) reject(error)
@@ -15,7 +15,7 @@ var getQuotes = url => {
                     if (count < 2) {
                         const str = $(this).children('li').text()
                         const text = str.substr(0, str.search($(this).children('li').children('ul').children().last().text().substr(0, 10)))
-                        addInformation(text, $(this).children('li').children('ul').children().last().children('i').text(), final)
+                        addInformation(text, $(this).children('li').children('ul').children().last().children('i').text(),max_length, final)
                     }
             } catch (ex) {
                 console.log(ex)
@@ -37,16 +37,19 @@ var getUrl = name => {
   })
 }
 
-function addInformation(text, from, array) {
-    if (from.length > 5 && text.length > 10) array.push({
+var addInformation = (text, from, max_length=200,array) => {
+    if (from.length > 5 && text.length > 10 && text.length <= max_length) array.push({
         text: text,
         from: from
     })
-    else if (from.length === 0 && text.length > 10) array.push({
+    else if (from.length === 0 && text.length > 10 && text.length <= max_length) array.push({
         text: text
     })
 }
 
+getQuotes('/wiki/Fernando_Alonso',1000).then(result => {
+  console.log(result)
+})
 
 module.exports = {
   getUrl: getUrl,
