@@ -1,8 +1,8 @@
 var chai = require('chai'),
     chaiAsPromised = require("chai-as-promised"),
     rewire = require('rewire'),
-    wiki = require('../main.js'),
-    wikiRewire = rewire('../main.js')
+    wiki = require('../lib/main.js'),
+    wikiRewire = rewire('../lib/main.js')
 
 chai.use(chaiAsPromised)
 var should = chai.should()

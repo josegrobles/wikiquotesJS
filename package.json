@@ -1,14 +1,14 @@
 {
   "name": "wikiquotesjs",
-  "version": "0.4.0",
+  "version": "0.6.0",
   "description": "A fun way to obtain quotes from your favourite people",
-  "main": "main.js",
+  "main": "./lib/main.js",
   "scripts": {
     "test": "mocha"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/josegrobles/wikiquotesJS.git"
+    "url": "https://github.com/josegrobles/wikiquotesJS.git"
   },
   "keywords": [
     "quotes",
@@ -16,17 +16,19 @@
     "wikiquotes"
   ],
   "author": "Jose Antonio <josegrobles1997@gmail.com> (https://josegrobles.me)",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/josegrobles/wikiquotesJS/issues"
   },
   "homepage": "https://github.com/josegrobles/wikiquotesJS#readme",
+  "dependencies": {
+    "request": "^2.79.0",
+    "cheerio": "^0.22.0"
+  },
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
-    "cheerio": "^0.22.0",
     "mocha": "^3.2.0",
-    "request": "^2.79.0",
     "rewire": "^2.5.2"
   }
 }
