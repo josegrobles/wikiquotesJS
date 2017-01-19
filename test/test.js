@@ -1,10 +1,11 @@
-var chai = require('chai'),
+const chai = require('chai'),
     chaiAsPromised = require("chai-as-promised"),
     wiki = require('../lib/main.js'),
-    getQuotesName = wiki.getQuotesName
+    getQuotesName = wiki.getQuotesName,
+    getQOTD = wiki.getQOTD
 
 chai.use(chaiAsPromised)
-var should = chai.should()
+const should = chai.should()
 
 describe('Get quotes from given Name',function(){
   it('Find Fernando Alonso quotes',function(){
@@ -22,4 +23,11 @@ describe('Get quotes from given Name',function(){
   it('Find William Shakespeare quotes',function(){
     return getQuotesName('William Shakespeare').should.eventually.have.length.above(40)
   })
+})
+
+describe('Get QOTD',function(){
+  it('Get QOTD',function(){
+    return getQOTD().should.eventually.include.keys('text')
+  })
+
 })
