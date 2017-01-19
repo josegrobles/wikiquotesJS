@@ -1,7 +1,5 @@
-let wiki = require('./main.js')
+let wiki = require('./lib/main.js')
 
-wiki.getUrl("henry Ford").then(result => {
-  return wiki.getQuotes(result)
-}).then(result => {
+wiki.getRandomQuote().then(result => {
   console.log(result)
 })
