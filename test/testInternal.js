@@ -1,13 +1,14 @@
-var chai = require('chai'),
+'use strict'
+const chai = require('chai'),
     chaiAsPromised = require("chai-as-promised"),
     rewire = require('rewire'),
     wikiRewire = rewire('../lib/main.js')
 
 chai.use(chaiAsPromised)
-var should = chai.should()
+const should = chai.should()
 
-getUrl = wikiRewire.__get__('getUrl')
-getQuotes = wikiRewire.__get__('getQuotes')
+const getUrl = wikiRewire.__get__('getUrl')
+const getQuotes = wikiRewire.__get__('getQuotes')
 
 
 describe('Get URL needed for Quote function',function(){

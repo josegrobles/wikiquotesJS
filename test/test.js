@@ -5,3 +5,21 @@ var chai = require('chai'),
 
 chai.use(chaiAsPromised)
 var should = chai.should()
+
+describe('Get quotes from given Name',function(){
+  it('Find Fernando Alonso quotes',function(){
+    return getQuotesName('Fernando Alonsoo',1000).should.eventually.have.length.above(2)
+  })
+
+  it('Find Martin Luther King Jr. quotes',function(){
+    return getQuotesName('Martin Luther King Jr.').should.eventually.have.length.above(20)
+  })
+
+  it('Find Albert Einstein quotes',function(){
+    return getQuotesName('Albert Einstein').should.eventually.have.length.above(30)
+  })
+
+  it('Find William Shakespeare quotes',function(){
+    return getQuotesName('William Shakespeare').should.eventually.have.length.above(40)
+  })
+})
