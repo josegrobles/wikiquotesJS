@@ -1,13 +1,13 @@
 var chai = require('chai'),
     chaiAsPromised = require("chai-as-promised"),
     rewire = require('rewire'),
-    wiki = require('../lib/main.js'),
     wikiRewire = rewire('../lib/main.js')
 
 chai.use(chaiAsPromised)
 var should = chai.should()
 
 getUrl = wikiRewire.__get__('getUrl')
+getQuotes = wikiRewire.__get__('getQuotes')
 
 
 describe('Get URL needed for Quote function',function(){
@@ -25,5 +25,23 @@ describe('Get URL needed for Quote function',function(){
 
   it('Find William Shakespeare URL',function(){
     return getUrl('William Shakespeare').should.eventually.equal('/wiki/William_Shakespeare')
+  })
+})
+
+describe('Get quotes from given URL',function(){
+  it('Find Fernando Alonso quotes',function(){
+    return getQuotes('/wiki/Fernando_Alonso',1000).should.eventually.have.length.above(2)
+  })
+
+  it('Find Martin Luther King Jr. quotes',function(){
+    return getQuotes('/wiki/Martin_Luther_King,_Jr.').should.eventually.have.length.above(20)
+  })
+
+  it('Find Albert Einstein quotes',function(){
+    return getQuotes('/wiki/Albert_Einstein').should.eventually.have.length.above(30)
+  })
+
+  it('Find William Shakespeare quotes',function(){
+    return getQuotes('/wiki/William_Shakespeare').should.eventually.have.length.above(40)
   })
 })
