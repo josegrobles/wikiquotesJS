@@ -9,7 +9,7 @@ const should = chai.should()
 
 describe('Get quotes from given Name',function(){
   it('Find Fernando Alonso quotes',function(){
-    return getQuotesName('Fernando Alonsoo',1000).should.eventually.have.length.above(2)
+    return , getQuotesName('Fernando Alonsoo',1000).should.eventually.have.length.above(2)
   })
 
   it('Find Martin Luther King Jr. quotes',function(){
