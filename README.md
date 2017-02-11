@@ -1,4 +1,4 @@
-# wikiquotesJS
+# wikiquotesJS [![Build Status](https://travis-ci.org/josegrobles/wikiquotesJS.svg?branch=master)](https://travis-ci.org/josegrobles/wikiquotesJS)
 A fun way to obtain quotes from your favourite people
 #Installing
 ```
