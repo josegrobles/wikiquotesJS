@@ -8,20 +8,16 @@ chai.use(chaiAsPromised)
 const should = chai.should()
 
 describe('Get quotes from given Name',function(){
-  it('Find Fernando Alonso quotes',function(){
-    return getQuotesName('Fernando Alonsoo',1000).should.eventually.have.length.above(2)
-  })
-
   it('Find Martin Luther King Jr. quotes',function(){
-    return getQuotesName('Martin Luther King Jr.').should.eventually.have.length.above(20)
+    return getQuotesName('Martin Luther King Jr.',500).should.eventually.have.length.above(20)
   })
 
   it('Find Albert Einstein quotes',function(){
-    return getQuotesName('Albert Einstein').should.eventually.have.length.above(30)
+    return getQuotesName('Albert Einstein',1000).should.eventually.have.length.above(30)
   })
 
   it('Find William Shakespeare quotes',function(){
-    return getQuotesName('William Shakespeare').should.eventually.have.length.above(40)
+    return getQuotesName('William Shakespeare',1000).should.eventually.have.length.above(40)
   })
 })
 

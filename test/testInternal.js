@@ -30,19 +30,15 @@ describe('Get URL needed for Quote function',function(){
 })
 
 describe('Get quotes from given URL',function(){
-  it('Find Fernando Alonso quotes',function(){
-    return getQuotes('/wiki/Fernando_Alonso',1000).should.eventually.have.length.above(2)
-  })
-
   it('Find Martin Luther King Jr. quotes',function(){
-    return getQuotes('/wiki/Martin_Luther_King,_Jr.').should.eventually.have.length.above(20)
+    return getQuotes('/wiki/Martin_Luther_King,_Jr.',500).should.eventually.have.length.above(20)
   })
 
   it('Find Albert Einstein quotes',function(){
-    return getQuotes('/wiki/Albert_Einstein').should.eventually.have.length.above(30)
+    return getQuotes('/wiki/Albert_Einstein',1500).should.eventually.have.length.above(30)
   })
 
   it('Find William Shakespeare quotes',function(){
-    return getQuotes('/wiki/William_Shakespeare').should.eventually.have.length.above(40)
+    return getQuotes('/wiki/William_Shakespeare',1500).should.eventually.have.length.above(40)
   })
 })
